@@ -1,5 +1,3 @@
-/// <reference path="./index.d.ts" />
-
 /**
  * Create a function that calls and cache a function once
  * @param fn Function to be invoked once
