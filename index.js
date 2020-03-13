@@ -3,6 +3,12 @@
  * @template Return
  * @param {() => Return} fn Function to be invoked once
  * @returns {() => Return} Function that returns result of first-time execution of `fn`
+ *
+ * @example
+ *   import once from 'https://ksxgithub.github.io/once/index.ts'
+ *   const ran = once(Math.random)
+ *   console.log(ran() === ran()) // => true
+ *
  */
 export function once (fn) {
   let main = () => {
