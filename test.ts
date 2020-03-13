@@ -1,5 +1,5 @@
 import { assertStrictEq } from 'https://deno.land/std@v0.35.0/testing/asserts.ts'
-import DEFAULT, { once } from './index.ts'
+import DEFAULT, { once } from './index.js'
 
 Deno.test('default export', () => {
   assertStrictEq(once, DEFAULT)
