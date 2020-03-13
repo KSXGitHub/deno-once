@@ -10,7 +10,6 @@
  *   import once from 'https://ksxgithub.github.io/deno-once/index.js'
  *   const ran = once(Math.random)
  *   console.log(ran() === ran()) // => true
- *
  */
 export function once (fn) {
   let main = () => {
