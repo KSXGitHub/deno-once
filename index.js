@@ -1,4 +1,4 @@
-/// <reference types="./index.d.ts" />
+// @ts-check
 
 /**
  * Create a function that calls and cache a function once
