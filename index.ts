@@ -1,5 +1,3 @@
-/// <reference types="./index.d.ts" />
-
 /**
  * Create a function that calls and cache a function once
  * @template Return
@@ -11,7 +9,7 @@
  *   const ran = once(Math.random)
  *   console.log(ran() === ran()) // => true
  */
-export function once (fn) {
+export function once<Return> (fn: () => Return): () => Return {
   let main = () => {
     const value = fn()
     main = () => value
