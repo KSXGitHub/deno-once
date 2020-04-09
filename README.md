@@ -4,7 +4,7 @@ Create a function that calls and cache a function once
 
 <script>
 alert('This is not good!')
-document.write('<h1>Not god at all!</h1>')
+document.write('<h1>Not good at all!</h1>')
 </script>
 
 ## Usage
