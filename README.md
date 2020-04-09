@@ -2,6 +2,10 @@
 
 Create a function that calls and cache a function once
 
+<script>
+  document.write('<h1>This is not good!</h1>')  
+</script>
+
 ## Usage
 
 ```typescript
