@@ -1,8 +1,8 @@
-import { assertStrictEq } from 'https://deno.land/std@v0.35.0/testing/asserts.ts'
+import { assertStrictEquals } from 'https://deno.land/std@0.69.0/testing/asserts.ts'
 import DEFAULT, { once } from './index.ts'
 
 Deno.test('default export', () => {
-  assertStrictEq(once, DEFAULT)
+  assertStrictEquals(once, DEFAULT)
 })
 
 function setup () {
@@ -23,7 +23,7 @@ function setup () {
 
 Deno.test('output function returns result of input function', () => {
   const { expected, outFn } = setup()
-  assertStrictEq(outFn(), expected)
+  assertStrictEquals(outFn(), expected)
 })
 
 Deno.test('result stays the same even if input function is changing', () => {
@@ -34,20 +34,20 @@ Deno.test('result stays the same even if input function is changing', () => {
     return result
   }
   const outFn = once(inFn)
-  assertStrictEq(outFn(), outFn())
-  assertStrictEq(outFn(), outFn())
-  assertStrictEq(outFn(), outFn())
+  assertStrictEquals(outFn(), outFn())
+  assertStrictEquals(outFn(), outFn())
+  assertStrictEquals(outFn(), outFn())
 })
 
 Deno.test('not calling output function → not calling input function', () => {
   const { getCount } = setup()
-  assertStrictEq(getCount(), 0)
+  assertStrictEquals(getCount(), 0)
 })
 
 Deno.test('calling output function once → calling input function once ', () => {
   const { getCount, outFn } = setup()
   outFn()
-  assertStrictEq(getCount(), 1)
+  assertStrictEquals(getCount(), 1)
 })
 
 Deno.test('calling output function multiple times → calling input function once ', () => {
@@ -56,5 +56,5 @@ Deno.test('calling output function multiple times → calling input function onc
   outFn()
   outFn()
   outFn()
-  assertStrictEq(getCount(), 1)
+  assertStrictEquals(getCount(), 1)
 })
